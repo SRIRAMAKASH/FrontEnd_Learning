@@ -15,20 +15,31 @@
         text-decoration: none;
       }
 
-      div{
+      div {
         display: flex;
         justify-content: center;
         margin-top: 50px;
       }
-
     </style>
   </head>
   <body>
     <div class="imageName">
+      <label for="FileName">Enter the File Name  : </label>
       <input id="fileNameOfImage" type="text" name="fileNameOfImage" />
     </div>
     <div class="image">
-      <a href="/HTML/image.jpeg" download>Download</a>
+      <a id="image" href="#" onclick="imageNameAdded()">Download</a>
     </div>
+
+    <script>
+      function imageNameAdded() {
+        debugger;
+        var Name = document.getElementById("fileNameOfImage").value;
+        document
+          .getElementById("image")
+          .setAttribute("href", "/HTML/image.jpeg");
+        document.getElementById("image").setAttribute("download", Name);
+      }
+    </script>
   </body>
 </html>
